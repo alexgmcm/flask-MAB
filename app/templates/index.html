@@ -1,0 +1,26 @@
+
+ <h3>Current Cat: {{ name_string  }} </h3>
+<br>
+<img src="static/{{ name_string }}.jpg" alt="cat" width="400" height="300" />
+
+<br>
+ <form method="post" action="/index">
+
+<input type="submit" name="vote" value="yes">
+<input type="submit" name="vote" value="No">
+<br>
+
+<table class="centered thick-border">
+        <tr>
+                <th>Cat</th>
+                <th>Score</th>
+        </tr>
+        {% for k, v in score_dict.items() %}
+                <tr>
+                        <td>{{ k }}</td>
+                        <td>{{ v }}</td>
+                </tr>
+        {% endfor %}
+</table>
+
+</form>
