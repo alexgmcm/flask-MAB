@@ -1,7 +1,7 @@
 
- <h3>Current Cat: {{ name_string  }} </h3>
+ <h3>Current Cat: {{ cat_dict[n].name }} </h3>
 <br>
-<img src="static/{{ name_string }}.jpg" alt="cat" width="400" height="300" />
+<img src="static/{{ cat_dict[n].name }}.jpg" alt="cat" width="400" height="300" />
 
 <br>
  <form method="post" action="/index">
@@ -13,12 +13,16 @@
 <table class="centered thick-border">
         <tr>
                 <th>Cat</th>
+                <th>Views</th>
                 <th>Score</th>
+                <th>Percentage</th>
         </tr>
-        {% for k, v in score_dict.items() %}
+        {% for k,v in cat_dict.items() %}
                 <tr>
-                        <td>{{ k }}</td>
-                        <td>{{ v }}</td>
+                        <td>{{ v.name }}</td>
+                        <td>{{ v.views }}</td>
+                        <td>{{ v.score }}</td>
+                        <td>{{ v.score/v.views if v.views>0 else null }}</td>
                 </tr>
         {% endfor %}
 </table>
