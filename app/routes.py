@@ -22,6 +22,8 @@ def index():
     if request.method == 'POST':
         if request.form['vote'] == 'yes':
             cat.vote()
+        elif request.form['vote'] == 'no':
+            cat.fail()
         n=randint(1,3)
         cat = cat_dict[n]
         cat.view()

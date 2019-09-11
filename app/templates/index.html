@@ -7,7 +7,7 @@
  <form method="post" action="/index">
 
 <input type="submit" name="vote" value="yes">
-<input type="submit" name="vote" value="No">
+<input type="submit" name="vote" value="no">
 <br>
 
 <table class="centered thick-border">
@@ -15,6 +15,7 @@
                 <th>Cat</th>
                 <th>Views</th>
                 <th>Score</th>
+                <th>Fails</th>
                 <th>Percentage</th>
         </tr>
         {% for k,v in cat_dict.items() %}
@@ -22,6 +23,7 @@
                         <td>{{ v.name }}</td>
                         <td>{{ v.views }}</td>
                         <td>{{ v.score }}</td>
+                        <td>{{ v.fails }}</td>
                         <td>{{ v.score/v.views if v.views>0 else null }}</td>
                 </tr>
         {% endfor %}
