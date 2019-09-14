@@ -1,3 +1,4 @@
+import numpy as np
 class Cat:
 
     def __init__(self,name):
@@ -16,3 +17,8 @@ class Cat:
 
     def fail(self):
         self.fails = self.fails + 1
+
+    def drawBeta(self):
+        return np.random.beta(1+self.score,1+self.fails)
+
+    
